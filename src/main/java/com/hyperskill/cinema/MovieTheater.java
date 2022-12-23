@@ -51,16 +51,11 @@ public class MovieTheater {
             System.out.println("\nWrong input!");
             return false;
         }
-
-        for (int i = 0; i < row; i++) {
-            if (row - 1 == i) {
-                if (this.allSeats[i][seatNumber - 1].equals("B")) {
-                    System.out.println("\nThat ticket has already been purchased!");
-                    return false;
-                }
-                this.allSeats[i][seatNumber - 1] = "B";
-            }
+        if (this.allSeats[row - 1][seatNumber - 1].equals("B")) {
+            System.out.println("\nThat ticket has already been purchased!");
+            return false;
         }
+        this.allSeats[row - 1][seatNumber - 1] = "B";
         return true;
     }
 
